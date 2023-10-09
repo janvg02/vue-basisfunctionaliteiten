@@ -13,5 +13,10 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
     "vite": "^4.4.9"
-  }
+  },
+  "description": "",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
