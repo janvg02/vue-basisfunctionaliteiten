@@ -1,4 +1,6 @@
 <script>
+import TaskComponent from "@/TaskComponent.vue";
+
 export default{
   data(){
     return{
@@ -9,7 +11,11 @@ export default{
       label:"",
       prior:""
     }
+    },
+  components: {
+    TaskComponent
   },
+
   methods: {
       addTask(){
         //ingevulde data in object steken
@@ -37,7 +43,6 @@ export default{
 
       <label for=""> label</label>
       <input type="text" v-model="label" name="" id="">
-        <p>{{label}}</p>
       <label for=""> prioriteit</label>
       <input type="text" v-model="prior" name="" id="">
 
@@ -52,11 +57,14 @@ export default{
       <p>prior</p>
     </div>
     <div v-for="task in tasks" v-bind:key="task.description">
-    <p>{{ task.label }}</p>
-    <p>{{ task.description }}</p>
-    <p>{{ task.prior }}</p>
-    </div>
+    <TaskComponent>
+      v-bind:description="dit is de omschrijving"
+      v-bind:label= "dit is een label"
+      v-bind:prior= "dit is een prioriteit"
+    </TaskComponent>
   </div>
+  </div>
+
 </template>
 
 
