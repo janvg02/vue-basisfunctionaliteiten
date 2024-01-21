@@ -1,5 +1,5 @@
 <script>
-import TaskComponent from "@/TaskComponent.vue";
+import TaskComponent from "./TaskComponent.vue";
 
 export default{
   data(){
@@ -20,6 +20,7 @@ export default{
       addTask(){
         //ingevulde data in object steken
         const newTask = {
+          id: this.task.length + 1,
           description: this.description,
           label: this.label,
           prior: this.prior
@@ -31,6 +32,7 @@ export default{
         this.label="";
         this.prior="";
       }
+
   }
 }
 </script>
@@ -58,6 +60,8 @@ export default{
     </div>
     <div v-for="task in tasks" v-bind:key="task.description">
     <TaskComponent>
+      v-on:pleaseChangeLabel= 'changeThisLabel'
+      v-bind:id="task.id"
       v-bind:description="dit is de omschrijving"
       v-bind:label= "dit is een label"
       v-bind:prior= "dit is een prioriteit"

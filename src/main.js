@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import TaskComponent from "@/TaskComponent.vue"
+import TaskComponent from "./TaskComponent.vue"
 
 const app = createApp(App)
 
